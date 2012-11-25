@@ -1,0 +1,15 @@
+{
+  "name": "node-fleches",
+  "description": "A multiplayer turn-based strategy game with archers",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.3",
+    "ejs": "*",
+    "less-middleware": "*",
+		"bunyan": "*"
+  }
+}
