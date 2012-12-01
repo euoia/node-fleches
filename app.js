@@ -6,7 +6,7 @@ var express = require('express'),
   user = require('./routes/user'),
   http = require('http'),
   path = require('path'),
-	log = require('./lib/log');
+  log = require('log');
 
 var app = express();
 
