@@ -5,5 +5,5 @@ require('./mocha');
 // ----------------------
 // Now test the application.
 // ----------------------
-// Account
+// Test the account module.
 require('./account');
