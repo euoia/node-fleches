@@ -3,6 +3,7 @@
 // express --sessions --ejs --css less
 var express = require('express'),
   routes = require('./routes'),
+  account = require('./routes/account'),
   user = require('./routes/user'),
   http = require('http'),
   path = require('path'),
@@ -42,6 +43,7 @@ app.configure('development', function() {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/accounts', account.add);
 
 log.init(app.get('log engine'));
 
