@@ -4,7 +4,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "install": "cd lib/account; npm install",
+    "test": "mocha -R spec"
   },
   "dependencies": {
     "express": "3.0.3",

@@ -1,0 +1,5 @@
+{
+	"dbName": "account",
+	"destroyDB": false,
+	"dbLogging": false
+}

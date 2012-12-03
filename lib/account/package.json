@@ -1,0 +1,12 @@
+{
+  "name": "node-lib-account",
+  "description": "The account module",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "nano": "*",
+    "validator": "*",
+		"bcrypt": "*",
+		"underscore": "*"
+  }
+}
