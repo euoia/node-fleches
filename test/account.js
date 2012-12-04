@@ -2,9 +2,6 @@ var account = require('account'),
   assert = require('assert'),
   config = require('../config.json');
 
-// TODO: Put into a config file.
-var dbConnString = '127.0.0.1:5984';
-
 // ----------------------
 // Testing the accounts module.
 describe('Account', function() {
@@ -75,13 +72,28 @@ describe('Account', function() {
   });
 
   describe('#updateAccount()', function() {
-    it('should not return an error', function(done) {
+    it('should not return an error with a valid email', function(done) {
       retAcc.email = 'euoia@aioue.net';
-      account.update(retAcc, done);
+      account.update(retAcc, function(err, updatedAcc) {
+        assert.equal(err, undefined, 'failed to update account');
+        retAcc = updatedAcc;
+        done();
+      });
     });
+
+    it('should return an error with an invalid email', function(done) {
+      retAcc.email = 'euoia   @aioue.net';
+      account.update(retAcc, function(err, updatedAcc) {
+        assert.ok(err, 'there must be an error');
+        assert.ok(err.message, 'a message is given');
+        assert.equal(updatedAcc, undefined, 'account must not be updated');
+        done();
+      });
+    });
+
   });
 
-});
+}); // Account module.
 
 // ----------------------
 // Test the account routes.
